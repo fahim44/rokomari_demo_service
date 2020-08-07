@@ -12,10 +12,11 @@ volumes:
 
 services:
    rabbitmq:
-      image: 'rabbitmq:3.6-management-alpine'
+      image: 'resilva87/docker-rabbitmq-stomp'
       ports:
         - '5672:5672'
         - '15672:15672'
+        - '61613:61613'
       environment:
         RABBITMQ_DEFAULT_USER: "rabbitmq"
         RABBITMQ_DEFAULT_PASS: "rabbitmq"
