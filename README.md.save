@@ -1,8 +1,6 @@
 ## Ports:
+- rabbitmq: ``
 
-- rabbitmq: `5672`,`15672`
-- config-server: `8010`
-- eureka: `8011`
 
 
 ## Passwords:
