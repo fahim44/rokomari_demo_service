@@ -3,6 +3,7 @@
 - rabbitmq: `5672`,`15672`
 - config-server: `8010`
 - eureka: `8011`
+- zuul: `8012`
 
 
 ## Passwords:
@@ -18,3 +19,15 @@
 
 ### eureka-discovery
 `eureka:eureka`
+
+### zuul-api-gateway
+`zuul:zuul`
+
+
+## Locations:
+
+### shared properties:
+`\config-server\sharedProperties\`
+
+### keytool:
+`\config-server\keytools\`
