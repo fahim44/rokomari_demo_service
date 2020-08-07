@@ -1,0 +1,26 @@
+version: '3.6'
+
+networks:
+   web-app-net:
+       name: 'my-web-app-net'
+       driver: 'bridge'
+
+volumes:
+   deliman-mysql-db-storage:
+   redis-inmemory-storage:
+   activemq-storage:
+
+services:
+   rabbitmq:
+      image: 'rabbitmq:3.6-management-alpine'
+      ports:
+        - '5672:5672'
+        - '15672:15672'
+      environment:
+        RABBITMQ_DEFAULT_USER: "rabbitmq"
+        RABBITMQ_DEFAULT_PASS: "rabbitmq"
+      networks:
+        - web-app-net
+      volumes:
+        - activemq-storage:/var/log/activemq
+      restart: on-failure
