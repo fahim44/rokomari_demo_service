@@ -5,6 +5,7 @@
 - eureka (microservice discovery service)
 - zuul (backend entryPoint + Ribbon load balancer)
 - order-ws (microservice for listening new order creation and notifing other clients)
+- web-client (vaadin app to create new order randomly in every 1-5 secs)
 
 ## Ports:
 
@@ -12,7 +13,7 @@
 - config-server: `8010`
 - eureka: `8011`
 - zuul: `8012`
-
+- web-client: `8013`
 
 ## Passwords:
 
