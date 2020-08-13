@@ -6,6 +6,7 @@
 - gateway-service (Gateway service + load balancer)
 - order-ws (microservice for listening new order creation and notifing other clients)
 - web-client (vaadin app to create new order randomly in every 1-5 secs)
+- android-client (android app to listen new order creation)
 
 ## Ports:
 

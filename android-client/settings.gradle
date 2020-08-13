@@ -1,0 +1,3 @@
+include ':stomp-protocol-android'
+include ':app'
+rootProject.name = "Android Client"
