@@ -1,21 +1,29 @@
 package com.fahim.route;
 
+import com.fahim.service.SocketService;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 
+@Slf4j
 @Route
 @CssImport("./styles/shared-styles.css")
 public class MainView extends VerticalLayout {
 
     private Paragraph paragraph;
+    private SocketService socketService;
 
-    public MainView() {
+    @Autowired
+    public MainView(SocketService socketService) {
         addClassName("centered-content");
         initContent();
+
+        this.socketService = socketService;
     }
 
     private void initContent() {
@@ -31,6 +39,7 @@ public class MainView extends VerticalLayout {
         startButton.addClickListener(buttonClickEvent -> {
             //TODO;
             addToLog("start button clicked");
+            socketService.connect();
         });
         add(startButton);
     }
@@ -40,6 +49,7 @@ public class MainView extends VerticalLayout {
         stopButton.addClickListener(buttonClickEvent -> {
             //TODO
             addToLog("stop button clicked");
+            socketService.disconnect();
         });
         add(stopButton);
     }
