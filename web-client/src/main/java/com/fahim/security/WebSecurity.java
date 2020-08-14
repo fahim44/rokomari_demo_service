@@ -1,4 +1,4 @@
-package com.fahim.orderws.security;
+package com.fahim.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 @RequiredArgsConstructor
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
-    
+
     private final Environment environment;
 
     @Override
@@ -21,7 +21,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/**").hasIpAddress(environment.getProperty("app.gateway.ip"))
-                .anyRequest().denyAll();
+                //.antMatchers("/**").hasIpAddress(environment.getProperty("app.gateway.ip"))
+                .anyRequest().permitAll();
     }
 }
