@@ -21,7 +21,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/**").hasIpAddress(environment.getProperty("app.gateway.ip"))
-                .anyRequest().denyAll();
+               // .antMatchers("/**").hasIpAddress(environment.getProperty("app.gateway.ip"))
+                .anyRequest().permitAll();
     }
 }

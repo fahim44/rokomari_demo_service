@@ -2,7 +2,6 @@ package com.fahim.android_client.view.ui.mainactivity;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.fahim.android_client.model.Order;
